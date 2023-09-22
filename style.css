@@ -1,5 +1,8 @@
 * {
-    box-sizing: border-box;
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+ 
   }
   
   /* Remove margins and padding from the list */
@@ -54,3 +57,17 @@ ul li.checked::before {
     /* Additional styles for the list can be added here */
   }
   
+  #card{
+    width: 430px;
+    margin: 18px;
+    padding: 15px;
+    border: 1px #cccccc solid;
+    border-radius: 25px;
+    box-shadow: 5px 5px rgba(119, 101, 101, 0.3)
+  }
+  
+  #card-div{
+    padding: 18px;
+    border: 1px #cccccc solid;
+    border-radius: 15px;  
+  }

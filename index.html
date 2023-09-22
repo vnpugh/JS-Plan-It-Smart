@@ -10,26 +10,31 @@
 </head>
 <body>
  
-    <nav class="navbar">
-        <div class="container-fluid">
-          <form class="d-flex" role="Add A Task">
-            <input id="task-input" class="form-control me-2" type="text" placeholder="Add A Task" aria-label="Add A Task">
-            <button id="addButton" class="btn btn-outline-success" type="button" onclick="newTaskElement()">Add</button>
-          </form>
-        </div>
-      </nav>
+    <div id="card">
+            <nav class="navbar">
+                <div class="container-fluid">
+                <form class="d-flex" role="Add A Task">
+                    <input id="task-input" class="form-control me-2" type="text" placeholder="Add A Task" aria-label="Add A Task" style="width: 310px;">
+                    <button id="addButton" class="btn btn-outline-success" type="button" onclick="newTaskElement()">Add</button>
+                    
+                </form>
+                </div>
+            </nav>
 
-      <ul id="custom-list">
-        <li>Hit the gym</li>
-        <li class="checked">Pay bills</li>
-        <li>Meet George</li>
-        <li>Buy eggs</li>
-        <li>Read a book</li>
-        <li>Organize office</li>
-      </ul>
+    <div id="card-div">
+            <h3>Tasks To Complete</h3>
+                    <ul id="custom-list">
+                        <li>Hit the gym</li>
+                        <li class="checked">Pay Phone Bill</li>
+                        <li>Meet George For Lunch</li>
+                        <li>Buy Beyonce Tickets</li>
+                        <li>Read a book</li>
+                        <li>Organize office</li>
+                    </ul>
+            <h3>Completed Tasks</h3>
     
-
-
+        </div>
+	</div>
 
 
 
