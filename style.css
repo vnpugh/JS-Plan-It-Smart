@@ -2,8 +2,24 @@
   /* margin: 0;
   padding: 0; */
   box-sizing: border-box;
- 
+
   }
+
+  body {
+    background: linear-gradient(to bottom, #ffcc00, #ff6600);
+    /* Replace the color values with your desired gradient colors */
+    /* You can also adjust the direction of the gradient by changing 'to bottom' */
+    /* For example, 'to right' for a horizontal gradient */
+    /* '45deg' for a diagonal gradient, etc. */
+    
+    /* Additional CSS properties for better cross-browser compatibility */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Ensures the background doesn't scroll with the content */
+    background-size: cover; /* Covers the entire viewport */
+    /* Other CSS properties as needed */
+    color: white; /* Text color for better readability */
+  }
+
   
   /* Remove margins and padding from the list */
   ul {
@@ -89,8 +105,12 @@ ul li:hover {
     margin-left: 6px;
 }
 
+.img-plan {
+ 
+   margin-left: 35px;
+}
 
-  
+
   
 
 
@@ -106,16 +126,24 @@ ul li:hover {
 
   /* card layout */
   #card{
-    width: 500px;
-    margin: 18px;
+    width: 495px;
+    margin: 2em 0 0 32em;
     padding: 15px;
     border: 1px #cccccc solid;
     border-radius: 25px;
-    box-shadow: 5px 5px rgba(119, 101, 101, 0.3)
+    box-shadow: 5px 5px rgba(119, 101, 101, 0.3);
+    background-color: white;
+
+  
+    
+
+    
   }
   
   #card-div{
     padding: 18px;
     border: 1px #cccccc solid;
-    border-radius: 15px;  
+    border-radius: 15px; 
+
+
   }
