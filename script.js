@@ -1,9 +1,10 @@
 
 // Declare variables
 const myTodolist = document.getElementsByTagName("li"); // Selecting all list items in the HTML document 
-const editTask = document.getElementsByClassName("editIcon"); // Hides or deletes tasks when the X is clicked
-const deleteTask = document.getElementsByClassName("deleteIcon"); // Hides or deletes tasks when the X is clicked
-
+const editTask = document.getElementsByClassName("editIcon"); //edits tasks 
+const deleteTask = document.getElementsByClassName("deleteIcon"); //deletes tasks
+const completeTask = document.getElementsByClassName("completeIcon");
+const completedTasksSection = document.getElementById("completed-tasks");
 const ul = document.getElementById("custom-list");
 
   const checkboxContainer = document.createElement("div");
@@ -21,6 +22,7 @@ function newTaskElement() {
   }
 
   const ul = document.getElementById("custom-list");
+
   const li = document.createElement("li");
 
   const checkboxContainer = document.createElement("div");
@@ -38,7 +40,33 @@ function newTaskElement() {
   checkboxContainer.appendChild(checkbox);
   checkboxContainer.appendChild(label);
 
-  // Create the edit and delete icons
+  // Create the completed task icon
+  const completeIcon = document.createElement("i");
+ completeIcon.className = "fa-solid fa-check fa-lg";
+
+ completeIcon.onclick = function () {
+  if (checkbox.checked) {
+
+   // Remove the edit icon and delete icon
+   editIcon.style.display = "none";
+   deleteIcon.style.display = "none";
+   
+   // Apply strikethrough style to the task
+   label.style.textDecoration = "line-through";
+
+    ul.removeChild(li); // Remove the task from the "Tasks To Complete" section
+    completedTasksSection.appendChild(li); // Append the task to the "Completed Tasks" section
+    checkbox.checked = false; // Uncheck the checkbox after marking as completed
+} else {
+    alert("Please check the checkbox to complete the task.");
+}
+
+ };
+
+
+
+
+  // Create the edit task icon
   const editIcon = document.createElement("i");
   editIcon.className = "fas fa-pencil-alt edit-icon"; // Set the icon's class
   
@@ -54,6 +82,7 @@ function newTaskElement() {
     }
 };
 
+  // Create the delete task icon
   const deleteIcon = document.createElement("i");
   deleteIcon.className = "fas fa-trash delete-icon";
   
@@ -67,7 +96,8 @@ function newTaskElement() {
 
   };
 
-
+  
+  li.appendChild(completeIcon);
   li.appendChild(editIcon);
   li.appendChild(deleteIcon);
 

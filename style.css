@@ -88,9 +88,9 @@ ul li:hover {
 
 
       /* When checked, style the label text */
-      .task-checkbox:checked + .checkbox-label {
+      /* .task-checkbox:checked + .checkbox-label {
         text-decoration: line-through;
-    }
+    } */
 
 
 
