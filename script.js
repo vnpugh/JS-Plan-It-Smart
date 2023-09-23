@@ -41,16 +41,32 @@ function newTaskElement() {
   // Create the edit and delete icons
   const editIcon = document.createElement("i");
   editIcon.className = "fas fa-pencil-alt edit-icon"; // Set the icon's class
+  
   editIcon.onclick = function () {
-      // Add code to handle editing here
-      alert("Editing task: " + inputValue);
-  };
+    if (checkbox.checked) {
+        const newLabel = prompt("Edit the task:", label.textContent);
+        if (newLabel !== null) {
+            label.textContent = newLabel;
+            checkbox.checked = false; // Uncheck the checkbox after editing
+        }
+    } else {
+        alert("Please check the checkbox to edit the task.");
+    }
+};
 
   const deleteIcon = document.createElement("i");
   deleteIcon.className = "fas fa-trash delete-icon";
+  
   deleteIcon.onclick = function () {
+
+    if (checkbox.checked) {
       ul.removeChild(li); // Remove the list item
+    } else {
+      alert("Please check the checkbox to delete the task.");
+  }
+
   };
+
 
   li.appendChild(editIcon);
   li.appendChild(deleteIcon);
