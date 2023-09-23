@@ -21,7 +21,7 @@ function newTaskElement() {
       return;
   }
 
-  const ul = document.getElementById("custom-list");
+
 
   const li = document.createElement("li");
 
@@ -54,6 +54,7 @@ function newTaskElement() {
    // Apply strikethrough style to the task
    label.style.textDecoration = "line-through";
 
+ 
     ul.removeChild(li); // Remove the task from the "Tasks To Complete" section
     completedTasksSection.appendChild(li); // Append the task to the "Completed Tasks" section
     checkbox.checked = false; // Uncheck the checkbox after marking as completed
@@ -65,10 +66,9 @@ function newTaskElement() {
 
 
 
-
   // Create the edit task icon
   const editIcon = document.createElement("i");
-  editIcon.className = "fas fa-pencil-alt edit-icon"; // Set the icon's class
+  editIcon.className = "fa-solid fa-pencil fa-lg"; // Set the icon's class
   
   editIcon.onclick = function () {
     if (checkbox.checked) {
@@ -84,7 +84,7 @@ function newTaskElement() {
 
   // Create the delete task icon
   const deleteIcon = document.createElement("i");
-  deleteIcon.className = "fas fa-trash delete-icon";
+  deleteIcon.className = "fa-regular fa-trash-can fa-lg";
   
   deleteIcon.onclick = function () {
 
@@ -94,9 +94,15 @@ function newTaskElement() {
       alert("Please check the checkbox to delete the task.");
   }
 
+
+
+
+
+
+
   };
 
-  
+
   li.appendChild(completeIcon);
   li.appendChild(editIcon);
   li.appendChild(deleteIcon);

@@ -40,6 +40,7 @@ ul li:hover {
     position: relative;
     padding-left: 1px; /* Adjust the padding to match your design */
     cursor: pointer;
+
   }
   
 
@@ -61,36 +62,38 @@ ul li:hover {
   /* Show the checkmark icon when the checkbox is checked */
   .checkbox-container input[type="checkbox"]:checked + .checkbox-checkmark:after {
     display: block;
+   
   }
   
   /* Style the text next to the checkbox */
   .checkbox-label {
     margin-left: 35px; /* Adjust the margin to match your design */
+    font-size: 19px;
+    font-weight: lighter;
   }
+
   
   /* Example of applying the custom checkbox to a list item */
   li {
     list-style-type: none;
     margin-bottom: 10px;
+ 
+    
   }
 
+ 
+
+  .fa-solid, .fas {
+    font-weight: 900;
+    margin-right: 6px;
+    margin-left: 6px;
+}
 
 
+  
+  
 
 
-
-
-
-
-
-
-
-
-
-      /* When checked, style the label text */
-      /* .task-checkbox:checked + .checkbox-label {
-        text-decoration: line-through;
-    } */
 
 
 
@@ -103,7 +106,7 @@ ul li:hover {
 
   /* card layout */
   #card{
-    width: 430px;
+    width: 500px;
     margin: 18px;
     padding: 15px;
     border: 1px #cccccc solid;
