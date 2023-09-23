@@ -15,9 +15,9 @@
   ul li {
     cursor: auto;
     position: relative;
-    padding: 12px 8px 12px 40px;
+    /* padding: 5px 5px 5px 5px; */
     background: #ffffff;
-    font-size: 18px;
+    font-size: 15px;
     transition: 0.2s;
   
     /* make the list items unselectable */
@@ -32,14 +32,82 @@ ul li:hover {
     background: #ddd;
   }
 
+
+
+/* Style the custom checkbox container */
+.checkbox-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 1px; /* Adjust the padding to match your design */
+    cursor: pointer;
+  }
+  
+
+   */
+  /* Style the checkmark icon (hidden by default) */
+  .checkbox-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #333;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  /* Show the checkmark icon when the checkbox is checked */
+  .checkbox-container input[type="checkbox"]:checked + .checkbox-checkmark:after {
+    display: block;
+  }
+  
+  /* Style the text next to the checkbox */
+  .checkbox-label {
+    margin-left: 35px; /* Adjust the margin to match your design */
+  }
+  
+  /* Example of applying the custom checkbox to a list item */
+  li {
+    list-style-type: none;
+    margin-bottom: 10px;
+  }
+  
+/* 
+  .custom-checkbox .checkbox-container {
+
+  }
+  
+  .custom-checkbox .checkbox-label {
+  
+  }
+   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /* When clicked on, strike out text */
-ul li.checked {
+/* ul li.checked input[type="checkbox"] {
 
     text-decoration: line-through;
-  }
+  } */
 
   /* Add a "checked" mark when clicked on */
-ul li.checked::before {
+/* ul li.checked::before {
     content: '';
     position: absolute;
     border-color: #17ea84;
@@ -54,9 +122,16 @@ ul li.checked::before {
 
   #custom-list {
     list-style-type: none;
-    /* Additional styles for the list can be added here */
-  }
-  
+
+  } */
+
+
+
+
+
+
+
+  /* card layout */
   #card{
     width: 430px;
     margin: 18px;

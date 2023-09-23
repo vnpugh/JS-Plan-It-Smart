@@ -1,64 +1,63 @@
+
 // Declare variables
-const myTodolist = document.getElementsByTagName("LI"); // Selecting all list items in the HTML document 
-const deleteTask = document.getElementsByClassName("delete"); // Hides or deletes tasks when the X is clicked
-const list = document.querySelector('ul'); // Item is checked when clicked inside the box
+const myTodolist = document.getElementsByTagName("li"); // Selecting all list items in the HTML document 
+const editTask = document.getElementsByClassName("editIcon"); // Hides or deletes tasks when the X is clicked
+const deleteTask = document.getElementsByClassName("deleteIcon"); // Hides or deletes tasks when the X is clicked
+
+const ul = document.getElementById("custom-list");
+
+  const checkboxContainer = document.createElement("div");
+  const checkbox = document.createElement("input");
+  const checkboxLabel = document.createElement("label");
+
+
 const addButton = document.getElementById("addButton"); // Get the "Add" button by its ID
 
-// Create a "delete" button and append it to each list item
-for (let i = 0; i < myTodolist.length; i++) {
-  const btn = document.createElement("BUTTON");
-  const txt = document.createTextNode("\u00D7");
-  btn.className = "delete";
-  btn.appendChild(txt);
-  myTodolist[i].appendChild(btn);
-}
-
-// Click on a delete button to hide the current list item
-for (let i = 0; i < deleteTask.length; i++) {
-  deleteTask[i].onclick = function() {
-    const div = this.parentElement;
-    div.style.display = "none";
-  };
-}
-
-// Add a "checked" symbol when clicking on a list item
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
-
-// Create a new list item when clicking on the "Add" button
 function newTaskElement() {
-  const li = document.createElement("li");
   const inputValue = document.getElementById("task-input").value;
-  const text = document.createTextNode(inputValue);
-  li.appendChild(text);
-
   if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("custom-list").appendChild(li);
+      alert("Task Cannot Be Empty!");
+      return;
   }
-  document.getElementById("task-input").value = "";
 
-  const btn = document.createElement("BUTTON");
-  const unicode = document.createTextNode("\u00D7");
-  btn.className = "add";
-  btn.appendChild(unicode);
-  li.appendChild(btn);
+  const ul = document.getElementById("custom-list");
+  const li = document.createElement("li");
 
-  btn.onclick = function() {
-    const div = this.parentElement;
-    div.style.display = "none";
+  const checkboxContainer = document.createElement("div");
+  checkboxContainer.className = "checkbox-container";
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "task-checkbox"; // Add a class to style the checkbox
+
+  const label = document.createElement("label");
+  label.className = "checkbox-label";
+  label.textContent = inputValue;
+
+  li.appendChild(checkboxContainer);
+  checkboxContainer.appendChild(checkbox);
+  checkboxContainer.appendChild(label);
+
+  // Create the edit and delete icons
+  const editIcon = document.createElement("i");
+  editIcon.className = "fas fa-pencil-alt edit-icon"; // Set the icon's class
+  editIcon.onclick = function () {
+      // Add code to handle editing here
+      alert("Editing task: " + inputValue);
   };
+
+  const deleteIcon = document.createElement("i");
+  deleteIcon.className = "fas fa-trash delete-icon";
+  deleteIcon.onclick = function () {
+      ul.removeChild(li); // Remove the list item
+  };
+
+  li.appendChild(editIcon);
+  li.appendChild(deleteIcon);
+
+  ul.appendChild(li);
+  document.getElementById("task-input").value = "";
 }
 
 
 
-
-
-
-
-
-  
