@@ -14,6 +14,8 @@ const ul = document.getElementById("custom-list");
 
 const addButton = document.getElementById("addButton"); // Get the "Add" button by its ID
 
+
+
 //Tasks To Complete Section
 function newTaskElement() {
   const inputValue = document.getElementById("task-input").value;
@@ -61,7 +63,6 @@ function newTaskElement() {
    // Apply strikethrough style to the task
    label.style.textDecoration = "line-through";
 
-
  
     ul.removeChild(li); // Remove the task from the "Tasks To Complete" section
     completedTasksSection.appendChild(li); // Append the task to the "Completed Tasks" section
@@ -107,10 +108,6 @@ function newTaskElement() {
 
 
 
-
-
-
-
   };
 
 
@@ -122,7 +119,19 @@ function newTaskElement() {
   document.getElementById("task-input").value = "";
 
 
+
+
 }
 
+
+
+// Function to add tasks to local storage
+// function addTasksToLocalStorage(task) {
+//   const tasks = getTasksFromLocalStorage();
+//   tasks.push(task);
+//   // convert the array to string then store it.
+//   localStorage.setItem('tasks', JSON.stringify(tasks));
+
+// }
 
 

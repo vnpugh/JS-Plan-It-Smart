@@ -80,10 +80,16 @@ ul li:hover {
     display: block;
    
   }
+
+ /* Add margin to the li elements in the h3 completed tasks section */
+h3 li {
+    margin-left: 30.2px; 
+  }
+  
   
   /* Style the text next to the checkbox */
   .checkbox-label {
-    margin-left: 35px; /* Adjust the margin to match your design */
+    margin-left: 15px; 
     font-size: 19px;
     font-weight: lighter;
   }
@@ -99,11 +105,19 @@ ul li:hover {
 
  
 
-  .fa-solid, .fas {
-    font-weight: 900;
+  .fa-check {
+    font-weight: 700;
     margin-right: 6px;
-    margin-left: 6px;
+    margin-left: 15px;
 }
+
+.fa-pencil {
+    font-weight: 600;
+    margin-right: 15px;
+     margin-left: 15px;
+    }
+
+
 
 /* Completed Tasks Section */
 /* targeting the trash icon  */
