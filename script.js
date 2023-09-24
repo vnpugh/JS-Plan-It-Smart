@@ -99,7 +99,8 @@ function newTaskElement() {
   deleteIcon.onclick = function () {
 
     if (checkbox.checked) {
-      ul.removeChild(li); // Remove the list item
+     // Remove the list item if the checkbox is checked
+     completedTasksSection.removeChild(li);
     } else {
       alert("Please check the checkbox to delete the task.");
   }
