@@ -105,6 +105,17 @@ ul li:hover {
     margin-left: 6px;
 }
 
+/* Completed Tasks Section */
+/* targeting the trash icon  */
+.fa-trash-can:before {
+    font-size: medium;
+}
+
+h3 .fa-regular {
+    
+    margin-left: 25px;
+}
+
 .img-plan {
  
    margin-left: 35px;
@@ -113,6 +124,7 @@ ul li:hover {
 
   
 
+  
 
 
 

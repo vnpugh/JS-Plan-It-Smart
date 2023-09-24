@@ -14,6 +14,7 @@ const ul = document.getElementById("custom-list");
 
 const addButton = document.getElementById("addButton"); // Get the "Add" button by its ID
 
+//Tasks To Complete Section
 function newTaskElement() {
   const inputValue = document.getElementById("task-input").value;
   if (inputValue === '') {
@@ -40,19 +41,26 @@ function newTaskElement() {
   checkboxContainer.appendChild(checkbox);
   checkboxContainer.appendChild(label);
 
-  // Create the completed task icon
-  const completeIcon = document.createElement("i");
- completeIcon.className = "fa-solid fa-check fa-lg";
+//Completed Tasks Section
+//create the completed task (check mark) icon
+ const completeIcon = document.createElement("i");
+ completeIcon.className = "fa-solid fa-check fa-lg"; //check mark
 
  completeIcon.onclick = function () {
   if (checkbox.checked) {
 
+
+      //Create the trash can icon
+      const trashIcon = document.createElement("i");
+      trashIcon.className = "fa-regular fa-trash-can fa-sm";
+
    // Remove the edit icon and delete icon
    editIcon.style.display = "none";
-   deleteIcon.style.display = "none";
+   completeIcon.style.display = "none"; // Remove the checkmark icon
    
    // Apply strikethrough style to the task
    label.style.textDecoration = "line-through";
+
 
  
     ul.removeChild(li); // Remove the task from the "Tasks To Complete" section
@@ -82,6 +90,8 @@ function newTaskElement() {
     }
 };
 
+
+
   // Create the delete task icon
   const deleteIcon = document.createElement("i");
   deleteIcon.className = "fa-regular fa-trash-can fa-lg";
@@ -109,6 +119,8 @@ function newTaskElement() {
 
   ul.appendChild(li);
   document.getElementById("task-input").value = "";
+
+
 }
 
 
